@@ -96,7 +96,8 @@
                     </div>
                 </div>
                 <div class="container-button-upload-radio">
-                    <a href="EndUser1.php" class="btn-upload-back" id="btn-upload-back">Kembali</a>
+                    <a href="EndUser1.php" id="btn-upload-back">
+                        <Button class="btn-upload-back">Kembali</Button></a>
                     <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
                 </div>
             </form>

@@ -80,7 +80,7 @@
                             </div>
                         </div>
                         <div class="container" style="display: flex;">
-                            <a href="AdminSettingPassword.php" class="btn-ganti-password" id="btn-ganti">Ganti Password</a>
+                        <a href="AdminSettingPassword.php"><Button class="btn-ganti-password">Ganti Password</Button></a>
                             <button type="submit" class="btn-simpan-data" id="btn-simpan">Simpan Perubahan</button>
                         </div>
                     </form>

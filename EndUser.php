@@ -21,7 +21,9 @@
                     </div>
                 </div>
                 <div class="container-button">
-                    <a href="HomeUser.php" class="btn-back" id="btn-back">Kembali</a>
+                    <a href="HomeUser.php" id="btn-back">
+                        <Button class="btn-back">Kembali</Button>
+                    </a>
                     <button type="submit" class="btn-next" id="btn-next">Berikutnya</button>
                 </div>
             </form>

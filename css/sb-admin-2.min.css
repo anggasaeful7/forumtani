@@ -1858,7 +1858,7 @@ pre code {
 }
 
 .edit-input-data {
-    width: 950px !important;
+    width: 1050px !important;
     border-radius: 15px !important;
     box-shadow: 0px 5px 4px 0px #D5D8DE !important;
     margin-left: 40px;
@@ -11997,6 +11997,7 @@ a:focus {
 
 @media (max-width: 500px) {
     .edit-input-data {
+        margin-left: 20px;
         width: 200px !important;
         font-size: 10px !important;
     }

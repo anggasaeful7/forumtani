@@ -207,7 +207,7 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="text-main">Daftar Data Petani</h1>
-                        <a href="./AdminCreate.php" class="btn-tambah">Tambah Petani</a>
+                        <a href="./AdminCreate.php"><Button class="btn-tambah">Tambah Petani</Button></a>
                     </div>
 
                     <!-- Table -->

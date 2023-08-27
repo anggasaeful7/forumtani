@@ -25,7 +25,9 @@
                 </p>
             </div>
             <div class="container-button-success">
+                <a href="HomeUser.php">
                 <button type="submit" class="btn-back-success" id="btn-back-success">Kembali Ke Halaman Awal</button>
+                </a>
             </div>
         </div>
     </div>

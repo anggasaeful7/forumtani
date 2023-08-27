@@ -36,15 +36,10 @@
                     </div>
                 </div>
                 <div class="container-button-pemilik-radio">
-                    <a href="EndUser3.php" class="btn-upload-back" id="btn-upload-back">Kembali</a>
+                <a href="EndUser3.php" id="btn-upload-back"><Button class="btn-upload-back">Kembali</Button></a>
                     <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
                 </div>
             </form>
-
-            <div class="container-button-pemilik-radio">
-                <button type="submit" class="btn-upload-back" id="btn-upload-back">Kembali</button>
-                <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
-            </div>
         </div>
     </div>
 
