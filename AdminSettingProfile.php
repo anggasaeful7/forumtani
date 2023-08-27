@@ -55,30 +55,29 @@
                             <p><?= $pro['nama'] ?></p>
                         </div>
                         <div class="edit-admin-foto">
-                            <form action="gantiFoto.php" method="POST">
+                            <form action="ubahAdmin.php" method="post" id="formProfile">
                                 <input type="hidden" name="id_user" id="" value="<?= $pro['id_user'] ?>">
-                                <!-- <input type="file" name="foto" id="edit-gambar">
-                                <button type="submit" class="btn btn-warning">Edit Foto</button> -->
-                            </form>
+                                <label for="edit-foto" style="cursor: pointer;">Edit Foto
+                                    <input type="file" name="foto" value="" id="edit-foto" class="upload-file" />
+                                </label>
                         </div>
                     </div>
-                    <form action="ubahAdmin.php" method="post" id="formProfile">
-                        <div class="form-group row" style="margin-top: 20px;">
-                            <div class="col-10">
-                                <input type="hidden" name="id_user" id="" value="<?= $pro['id_user'] ?>">
-                                <input class="form-control edit-input-data" type="text" id="input-nama" value="<?= $pro['email'] ?>" name="email">
-                            </div>
+                    <div class="form-group row" style="margin-top: 20px;">
+                        <div class="col-10">
+                            <input type="hidden" name="id_user" id="" value="<?= $pro['id_user'] ?>">
+                            <input class="form-control edit-input-data" type="text" id="input-nama" value="<?= $pro['email'] ?>" name="email">
                         </div>
-                        <div class="form-group row">
-                            <div class="col-10">
-                                <input class="form-control edit-input-data" type="text" id="input-desa" value="<?= $pro['username'] ?>" name="username">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-10">
+                            <input class="form-control edit-input-data" type="text" id="input-desa" value="<?= $pro['username'] ?>" name="username">
                         </div>
-                        <div class="form-group row">
-                            <div class="col-10">
-                                <input class="form-control edit-input-data" type="text" id="input-alamat" value="<?= $pro['nama'] ?>" name="nama">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-10">
+                            <input class="form-control edit-input-data" type="text" id="input-alamat" value="<?= $pro['nama'] ?>" name="nama">
                         </div>
+                    </div>
 
                     </form>
                     <div class="container" style="display: flex;">

@@ -18,7 +18,7 @@
         <div class="card-body">
 
             <div class="container">
-                <form action="cekGambar.php" method="post" enctype="multipart/form-data">
+                <form action="cekGambar.php" method="post" enctype="multipart/form-data" id="myForm">
                     <div class="column">
                         <div class="col-sm-4" style="margin-bottom: 10px;">
                             <label for="upload-ktp">
@@ -42,19 +42,25 @@
                             <p class="text-upload-file">*upload berupa foto SPPT lahan</p>
                         </div>
                     </div>
-                    <div class="container-button-upload">
-                        <a href="EndUser.php"  id="btn-upload-back">
-                            <Button class="btn-upload-back">Kembali</Button>
-                        </a>
-                        <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
-                    </div>
+
                 </form>
+                <div class="container-button-upload">
+                    <a href="EndUser.php" id="btn-upload-back">
+                        <Button class="btn-upload-back">Kembali</Button>
+                    </a>
+                    <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
+                </div>
             </div>
 
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("btn-upload-next").addEventListener("click", function() {
+            document.getElementById("myForm").submit();
+        });
+    </script>
 </body>
 
 </html>

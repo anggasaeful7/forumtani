@@ -18,7 +18,7 @@
     <div class="card container-main2" style="background-color: rgb(255,255,255,0.3); height: 100%;">
         <div class="card-body">
 
-            <form action="cekKetiga.php" method="post">
+            <form action="cekKetiga.php" method="post" id="myForm">
                 <div class="form-group row">
                     <div class="col-11">
                         <input class="form-control input-data" type="text" id="input-ibu" placeholder="Masukan Nama Ibu Kandung" name="ibu">
@@ -45,17 +45,23 @@
                         <input class="form-control input-data" type="text" id="input-tanah" placeholder="Luas lahan sawah dan darat sesuai SPPT (Ha)" name="luas_lahan">
                     </div>
                 </div>
-                <div class="container-button-upload-radio">
-                    <a href="EndUser2.php" id="btn-upload-back"><Button class="btn-upload-back">Kembali</Button></a>
-                    <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
-                </div>
-            </form>
 
+            </form>
+            <div class="container-button-upload-radio">
+                <a href="EndUser2.php" id="btn-upload-back"><Button class="btn-upload-back">Kembali</Button></a>
+                <button type="submit" class="btn-upload-next" id="btn-upload-next">Berikutnya</button>
+            </div>
 
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("btn-upload-next").addEventListener("click", function() {
+            document.getElementById("myForm").submit();
+        });
+    </script>
 </body>
 
 </html>

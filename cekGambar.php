@@ -25,7 +25,7 @@ $extsppt = pathinfo($filenamesppt, PATHINFO_EXTENSION);
 if (!in_array($extktp, $ekstensi) && !in_array($extkk, $ekstensi) && !in_array($extsppt, $ekstensi)) {
     header("location:EndUser1.php?alert=gagal_ekstensi");
 } else {
-    if ($ukuranktp < 1044070 && $ukurankk < 1044070 && $ukuransppt < 1044070) {
+    if ($ukuranktp < 1000000 && $ukurankk < 1000000 && $ukuransppt < 1000000) {
         $xxktp = $rand . '_' . $filenamektp;
         $xxkk = $rand . '_' . $filenamekk;
         $xxsppt = $rand . '_' . $filenamesppt;

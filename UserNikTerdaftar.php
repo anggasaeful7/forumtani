@@ -23,7 +23,9 @@
                 </p>
             </div>
             <div class="container-button-invalid">
-                <a href="EndUser.php" class="btn-back" id="btn-back">Kembali</a>
+                <a href="EndUser.php">
+                    <Button class="btn-back">Kembali</Button>
+                </a>
             </div>
         </div>
     </div>
