@@ -62,7 +62,7 @@
                             </form>
                         </div>
                     </div>
-                    <form action="ubahAdmin.php" method="post">
+                    <form action="ubahAdmin.php" method="post" id="formProfile">
                         <div class="form-group row" style="margin-top: 20px;">
                             <div class="col-10">
                                 <input type="hidden" name="id_user" id="" value="<?= $pro['id_user'] ?>">
@@ -79,11 +79,14 @@
                                 <input class="form-control edit-input-data" type="text" id="input-alamat" value="<?= $pro['nama'] ?>" name="nama">
                             </div>
                         </div>
-                        <div class="container" style="display: flex;">
-                        <a href="AdminSettingPassword.php"><Button class="btn-ganti-password">Ganti Password</Button></a>
-                            <button type="submit" class="btn-simpan-data" id="btn-simpan">Simpan Perubahan</button>
-                        </div>
+
                     </form>
+                    <div class="container" style="display: flex;">
+                        <a href="AdminSettingPassword.php">
+                            <Button class="btn-ganti-password">Ganti Password</Button>
+                        </a>
+                        <button type="submit" class="btn-simpan-data" id="btn-simpan">Simpan Perubahan</button>
+                    </div>
 
                 </div>
             </div>
@@ -108,6 +111,12 @@
 
         <!-- Page level custom scripts -->
         <script src="js/demo/datatables-demo.js"></script>
+
+        <script>
+            document.getElementById("btn-simpan").addEventListener("click", function() {
+                document.getElementById("formProfile").submit();
+            });
+        </script>
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--

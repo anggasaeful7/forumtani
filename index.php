@@ -28,11 +28,11 @@
                         <div class="mb-4">
                             <input type="password" class="form-control" id="input-pass" placeholder="Password" name="password">
                         </div>
-                        <div class="text-left" id="text-lupa">
+                        <!-- <div class="text-left" id="text-lupa">
                             <a href="#" style="color: black;">
                                 <p>Lupa Password?</p>
                             </a>
-                        </div>
+                        </div> -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-color px-5 mb-4">Masuk</button>
                         </div>
