@@ -14,7 +14,16 @@ $ukuran = $_FILES['foto']['size'];
 $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
 // cek apakah foto diinput
-if ($filename != "") {
+if ($filename == "") {
+    $query = "UPDATE user SET email='$email',  nama='$name' WHERE id_user='$id_user'";
+    $sql = mysqli_query($koneksi, $query);
+    // Cek Sukses
+    if ($sql) {
+        header("location:HomeAdmin.php?alert=berhasil");
+    } else {
+        header("location:HomeAdmin.php?alert=gagal");
+    }
+} else {
     if (!in_array($ext, $ekstensi)) {
         header("location:HomeAdmin.php?alert=gagal_ekstensi");
     } else {
@@ -22,26 +31,17 @@ if ($filename != "") {
             $xx = $rand . '_' . $filename;
             move_uploaded_file($_FILES['foto']['tmp_name'], 'assets/img/user/' . $rand . '_' . $filename);
 
-            $query = "UPDATE user SET foto='$xx', email='$email', username='$username', nama='$name' WHERE id_user='$id_user'";
+            $query = "UPDATE user SET foto='$xx', email='$email',  nama='$name' WHERE id_user='$id_user'";
 
             $sql = mysqli_query($koneksi, $query);
             // Cek Sukses
             if ($sql) {
-                header("location:HomeAdmin.php?alert=berhasil");
+                header("location:HomeAdmin.php?alert=berhasil_dengan_foto");
             } else {
-                header("location:HomeAdmin.php?alert=gagal");
+                header("location:HomeAdmin.php?alert=gagal_dengan_foto");
             }
         } else {
             header("location:HomeAdmin.php?alert=gagal_ukuran");
         }
-    }
-} else {
-    $query = "UPDATE user SET email='$email', username='$username', nama='$name' WHERE id_user='$id_user'";
-    $sql = mysqli_query($koneksi, $query);
-    // Cek Sukses
-    if ($sql) {
-        header("location:HomeAdmin.php?alert=berhasil");
-    } else {
-        header("location:HomeAdmin.php?alert=gagal");
     }
 }

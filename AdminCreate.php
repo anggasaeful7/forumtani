@@ -47,7 +47,7 @@
 
             <li class="nav-item">
                 <div class="illustration">
-                    <img src="assets/img/user/<?= $pro['foto'] ?>" style="border-radius: 50%;" class="img-admin">
+                    <img src="assets/img/user/<?= $pro['foto'] ?>" width="100" style="border-radius: 50%;" class="img-admin">
                 </div>
                 <div class="admin-text">
                     <p><?= $pro['nama'] ?></p>

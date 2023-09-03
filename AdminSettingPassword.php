@@ -49,7 +49,7 @@
                     </div>
                     <div class="container edit-admin-container">
                         <div class="illustration">
-                            <img src="assets/img/user/<?= $pro['foto'] ?>" style="border-radius: 50%;" class="edit-admin-img">
+                            <img src="assets/img/user/<?= $pro['foto'] ?>" width="100" style="border-radius: 50%;" class="edit-admin-img">
                         </div>
                         <div class="edit-admin-text" style="margin-bottom: 50px;">
                             <p><?= $pro['nama'] ?></p>

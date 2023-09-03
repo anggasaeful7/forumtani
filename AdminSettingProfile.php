@@ -49,13 +49,13 @@
                     </div>
                     <div class="container edit-admin-container">
                         <div class="illustration">
-                            <img src="assets/img/user/<?= $pro['foto'] ?>" style="border-radius: 50%;" class="edit-admin-img">
+                            <img src="assets/img/user/<?= $pro['foto'] ?>" width="100" style="border-radius: 50%;" class="edit-admin-img">
                         </div>
                         <div class="edit-admin-text">
                             <p><?= $pro['nama'] ?></p>
                         </div>
                         <div class="edit-admin-foto">
-                            <form action="ubahAdmin.php" method="post" id="formProfile">
+                            <form action="ubahAdmin.php" method="post" id="formProfile" enctype="multipart/form-data">
                                 <input type="hidden" name="id_user" id="" value="<?= $pro['id_user'] ?>">
                                 <label for="edit-foto" style="cursor: pointer;">Edit Foto
                                     <input type="file" name="foto" value="" id="edit-foto" class="upload-file" />
@@ -66,11 +66,6 @@
                         <div class="col-10">
                             <input type="hidden" name="id_user" id="" value="<?= $pro['id_user'] ?>">
                             <input class="form-control edit-input-data" type="text" id="input-nama" value="<?= $pro['email'] ?>" name="email">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-10">
-                            <input class="form-control edit-input-data" type="text" id="input-desa" value="<?= $pro['username'] ?>" name="username">
                         </div>
                     </div>
                     <div class="form-group row">

@@ -51,7 +51,7 @@
 
             <li class="nav-item">
                 <div class="illustration">
-                    <img src="assets/img/user/<?= $profile['foto'] ?>" style="border-radius: 50%;" class="img-admin">
+                    <img src="assets/img/user/<?= $profile['foto'] ?>" width="100" style="border-radius: 50%;" class="img-admin">
                 </div>
                 <div class="admin-text">
                     <p><?= $profile['nama'] ?></p>

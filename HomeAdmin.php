@@ -48,7 +48,7 @@
 
             <li class="nav-item">
                 <div class="illustration">
-                    <img src="assets/img/user/<?= $pro['foto'] ?>" style="border-radius: 50%;" class="img-admin">
+                    <img src="assets/img/user/<?= $pro['foto'] ?>" style="border-radius: 50%;" width="100" class="img-admin">
                 </div>
                 <div class="admin-text">
                     <p><?= $pro['nama'] ?></p>
@@ -63,7 +63,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html" style="background-color: #FEAF00;">
+                <a class="nav-link" href="HomeAdmin.php" style="background-color: #FEAF00;">
                     <i class="fas fa-home fa-fw"></i>
                     <span>Home</span></a>
             </li>
@@ -111,11 +111,13 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
+                    <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search" method="GET" action="HomeAdmin.php">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Cari..." aria-label="Search" aria-describedby="basic-addon2" name="kata_cari" value="<?php if (isset($_GET['kata_cari'])) {
+                                                                                                                                                                                                    echo $_GET['kata_cari'];
+                                                                                                                                                                                                } ?>">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="submit">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -132,11 +134,13 @@
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
+                                <form class="form-inline mr-auto w-100 navbar-search" method="GET" action="HomeAdmin.php">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" name="kata_cari" value="<?php if (isset($_GET['kata_cari'])) {
+                                                                                                                                                                                                                    echo $_GET['kata_cari'];
+                                                                                                                                                                                                                } ?>">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
+                                            <button class="btn btn-primary" type="submit">
                                                 <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
@@ -242,36 +246,48 @@
                                         $total_halaman = ceil($jumlah_data / $batas);
 
                                         $no = 1;
-                                        $data = mysqli_query($koneksi, "select * from petani limit $halaman_awal, $batas");
-                                        $nomor = $halaman_awal + 1;
-                                        while ($d = mysqli_fetch_array($data)) {
-                                        ?>
-                                            <tr>
-                                                <td>
-                                                    <img src="assets/img/ktp/<?= $d['ktp'] ?>" class="img-ktp" alt="">
-                                                </td>
-                                                <td><?= $d['nama'] ?></td>
-                                                <td><?= $d['desa'] ?></td>
-                                                <td><?= $d['alamat'] ?></td>
-                                                <td><?= $d['ttl'] ?></td>
-                                                <td>
-                                                    <span class="action_btn">
-                                                        <a href="AdminView.php?id=<?= $d['id_petani'] ?>" class="table-button">
-                                                            <i class="fas fa-eye fa-sm"> </i>
-                                                        </a>
-                                                        <a href="AdminEdit.php?id=<?= $d['id_petani'] ?>" class="table-button">
-                                                            <i class="fas fa-pen fa-sm"> </i>
-                                                        </a>
-                                                        <a href="delete.php?id=<?= $d['id_petani'] ?>" class="table-button">
-                                                            <i class="fas fa-trash fa-sm"></i>
-                                                        </a>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                    </tbody>
-                                <?php
+                                        if (isset($_GET['kata_cari'])) {
+                                            $kata_cari = $_GET['kata_cari'];
+                                            $data = mysqli_query($koneksi, "select * from petani where nama like '%" . $kata_cari . "%' limit $halaman_awal, $batas");
+                                        } else {
+                                            $data = mysqli_query($koneksi, "select * from petani limit $halaman_awal, $batas");
                                         }
-                                ?>
+
+                                        $nomor = $halaman_awal + 1;
+                                        // Cek data apakah ada atau tidak
+                                        $jumlah = mysqli_num_rows($data);
+                                        if ($jumlah > 0) {
+                                            while ($d = mysqli_fetch_array($data)) {
+                                        ?>
+                                                <tr>
+                                                    <td>
+                                                        <img src="assets/img/ktp/<?= $d['ktp'] ?>" class="img-ktp" alt="">
+                                                    </td>
+                                                    <td><?= $d['nama'] ?></td>
+                                                    <td><?= $d['desa'] ?></td>
+                                                    <td><?= $d['alamat'] ?></td>
+                                                    <td><?= $d['ttl'] ?></td>
+                                                    <td>
+                                                        <span class="action_btn">
+                                                            <a href="AdminView.php?id=<?= $d['id_petani'] ?>" class="table-button">
+                                                                <i class="fas fa-eye fa-sm"> </i>
+                                                            </a>
+                                                            <a href="AdminEdit.php?id=<?= $d['id_petani'] ?>" class="table-button">
+                                                                <i class="fas fa-pen fa-sm"> </i>
+                                                            </a>
+                                                            <a href="delete.php?id=<?= $d['id_petani'] ?>" class="table-button">
+                                                                <i class="fas fa-trash fa-sm"></i>
+                                                            </a>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                    </tbody>
+                            <?php
+                                            }
+                                        } else {
+                                            echo "<tr><td colspan='7'>Data tidak ditemukan</td></tr>";
+                                        }
+                            ?>
                                 </table>
                             </div>
                         </div>
